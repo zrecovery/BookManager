@@ -8,6 +8,16 @@
 
 <svelte:head>
 	<title>Home</title>
+	<link rel="stylesheet" href="node_modules/svelte-material-ui/bare.css" />
+	<!-- Material Icons -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	<!-- Roboto -->
+	<link
+		rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700"
+	/>
+	<!-- Roboto Mono -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono" />
 </svelte:head>
 
 <section>
@@ -30,30 +40,4 @@
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
 </style>
