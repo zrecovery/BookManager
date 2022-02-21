@@ -1,40 +1,42 @@
-# create-svelte
+# Book Manager with Svelte
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+用于个人使用的简易图书管理网站
 
-## Creating a project
+`正在开发中(WIP)`
 
-If you're seeing this, you've probably already done this step. Congrats!
+## 背景
 
-```bash
-# create a new project in the current directory
-npm init svelte@next
+用于个人已收集文章的管理。
 
-# create a new project in my-app
-npm init svelte@next my-app
+主要使用`SvelteKit、TypeScript、IndexedDB`和`PWA`等技术。
+
+## 主要开发中
+-   [✖️]PWA + Service Worker + Offline
+
+-   [✖️]测试
+
+## 安装依赖
+
+这个项目使用 [node](http://nodejs.org) 和 [npm](https://npmjs.com)。请确保你本地安装了它们。
+
+```sh
+$ npm install 
 ```
 
-> Note: the `@next` is temporary
+## 使用说明
 
-## Developing
+### 开发
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```sh
+$ npm run dev
 ```
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
+### 构建
+```sh
+$ npm run build
 ```
 
-You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment.
+## 使用许可
+
+[BSD 2-Clause License](LICENSE) © Zrecovery
