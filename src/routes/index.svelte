@@ -6,8 +6,6 @@
 	import Index from './articles/index.svelte';
 </script>
 
-
-
 <svelte:head>
 	<title>Home</title>
 </svelte:head>

@@ -13,24 +13,23 @@
 		currentPage += 1;
 	}
 
-	function prevPage(){
+	function prevPage() {
 		currentPage -= 1;
 	}
 
 	$: articles = liveQuery(async () => {
 		return await articleStore.query(searchKey, offset, limit);
 	});
-
 </script>
 
 <TextBox placeholder="关键词" type="text" bind:value={searchKey} />
 
 {#if $articles}
-    {#each $articles as article}
-        <ListItem href="/articles/{article.id}">
-            {article.title}
-        </ListItem>
-    {/each}
+	{#each $articles as article}
+		<ListItem href="/articles/{article.id}">
+			{article.title}
+		</ListItem>
+	{/each}
 {/if}
 <div style="display: grid; grid-template-columns: repeat(12,1fr);">
 	<Button style="grid-column-start: 10" on:click={prevPage}>Prev</Button>

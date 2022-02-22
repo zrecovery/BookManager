@@ -23,7 +23,7 @@
 	--neutralDark: #201f1e;
 	--black: #000000;
 	--white: #ffffff;
-  }
+}
 
 @media screen and (prefers-color-scheme: dark) {
 	:root {
@@ -49,7 +49,7 @@
 		--neutralDark: #201f1e;
 		--black: #000000;
 		--white: #ffffff;
-	  }
+	}
 }
 
 #svelte {
@@ -65,8 +65,8 @@ header {
 	position: fixed;
 	box-shadow: 0 4px 10px #00000042;
 	width: 100%;
-	background-color: #ffffff88; 
-	backdrop-filter:saturate(80%) blur(30px) brightness(120%);
+	background-color: #ffffff88;
+	backdrop-filter: saturate(80%) blur(30px) brightness(120%);
 	box-shadow: 2px 0 5px #00000042;
 }
 
@@ -88,15 +88,15 @@ aside {
 	grid-row-start: 2;
 	grid-row-end: 3;
 	z-index: 1;
-	background-color: #ffffff88; 
-	backdrop-filter:saturate(80%) blur(30px) brightness(120%);
+	background-color: #ffffff88;
+	backdrop-filter: saturate(80%) blur(30px) brightness(120%);
 	box-shadow: 2px 0 5px #00000042;
 }
 
 .container {
 	display: grid;
 	grid-template-rows: 4rem auto;
-	grid-template-columns: repeat(12,1fr);
+	grid-template-columns: repeat(12, 1fr);
 	min-height: 100vh;
 	background-color: var(--themeLighterAlt);
 	margin: 0px;

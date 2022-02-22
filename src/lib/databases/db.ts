@@ -2,15 +2,15 @@ import Dexie, { type Table } from 'dexie';
 import type Article from './article';
 
 interface AlternativeDatabase {
-    indexedDB: {open: Function}
-    IDBKeyRange: {bound: Function, lowerBound: Function, upperBound: Function}
+	indexedDB: { open: Function };
+	IDBKeyRange: { bound: Function; lowerBound: Function; upperBound: Function };
 }
 
 export class IdxArticleStore extends Dexie {
 	articles!: Table<Article, number>;
 
 	constructor(alternativeDatabase?: AlternativeDatabase) {
-		super('articles', {...alternativeDatabase});
+		super('articles', { ...alternativeDatabase });
 		this.version(12).stores({
 			articles: '++id, title, book, author, content'
 		});
