@@ -11,16 +11,17 @@
 主要使用`SvelteKit、TypeScript、IndexedDB`和`PWA`等技术。
 
 ## 主要开发中
--   [✖️]PWA + Service Worker + Offline
 
--   [✖️]测试
+- [✖️]PWA + Service Worker + Offline
+
+- [✖️]测试
 
 ## 安装依赖
 
 这个项目使用 [node](http://nodejs.org) 和 [npm](https://npmjs.com)。请确保你本地安装了它们。
 
 ```sh
-$ npm install 
+$ npm install
 ```
 
 ## 使用说明
@@ -32,10 +33,10 @@ $ npm run dev
 ```
 
 ### 构建
+
 ```sh
 $ npm run build
 ```
-
 
 ## 使用许可
 
