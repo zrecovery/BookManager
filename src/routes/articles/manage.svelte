@@ -32,7 +32,7 @@
 <TextBox placeholder="关键词" type="text" bind:value={searchKey} />
 
 {#if $articles}
-	<fluent-data-grid generate-header="none" style="overflow-y: auto;">
+	<fluent-data-grid generate-header="none" style="overflow-y: auto; ">
 		<fluent-data-grid-row
 			row-type="header"
 			id="defaultHeader"
@@ -76,4 +76,9 @@
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 	}
+  
+  fluent-data-grid-cell {
+    color:var(--fds-text-primary);
+  }
+
 </style>
