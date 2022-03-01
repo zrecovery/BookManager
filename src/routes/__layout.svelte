@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Aside from '$lib/aside/Aside.svelte';
-  import Header from '$lib/header/Header.svelte';
+	import Header from '$lib/header/Header.svelte';
 </script>
 
 <Header />
@@ -9,7 +9,7 @@
 	<slot />
 </main>
 
-<Aside/>
+<Aside />
 
 <style>
 	@import '../app.css';

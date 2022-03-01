@@ -3,7 +3,7 @@
 	function toggle() {
 		let side = document.getElementById('aside');
 		if (side.style.gridColumnEnd === '1') {
-			side.style.gridColumnEnd = '2';
+			side.style.gridColumnEnd = '3';
 			side.style.width = '100%';
 			side.style.marginLeft = '0%';
 		} else {
@@ -28,23 +28,25 @@
 			/></svg
 		>
 	</IconButton>
-	<h3 style="color: var(--fds-text-secondary);grid-column-start: 2;grid-column-end: 4;">Book Manager</h3>
+	<h3 style="color: var(--fds-text-secondary);grid-column-start: 2;grid-column-end: 4;">
+		Book Manager
+	</h3>
 </header>
 
 <style>
 	#header {
-    -webkit-backdrop-filter: blur(60px);
-    backdrop-filter: blur(60px);
-    background-clip: padding-box;
-    background-color: var(--fds-layer-background-default);
-    border-bottom: 1px solid var(--fds-surface-stroke-flyout);
-    box-sizing: border-box;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    justify-content: center;
-    min-block-size: 56px;
-    position: fixed;
-    transform: translateY(.001px);
+		-webkit-backdrop-filter: blur(60px);
+		backdrop-filter: blur(60px);
+		background-clip: padding-box;
+		background-color: var(--fds-layer-background-default);
+		border-bottom: 1px solid var(--fds-surface-stroke-flyout);
+		box-sizing: border-box;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		justify-content: center;
+		min-block-size: 56px;
+		position: fixed;
+		transform: translateY(0.001px);
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		z-index: 2;

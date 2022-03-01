@@ -33,15 +33,15 @@
 
 <form style="display: grid;grid-template-rows:auto;gap:1em;">
 	<legend>添加文字</legend>
-	<TextBox bind:value={article.title} label="标题" />
-	<TextBox bind:value={article.book} label="系列" />
-	<TextBox bind:value={article.author} label="作者" />
-	<TextBox bind:value={article.serial} type="number" label="顺序" />
+	<TextBox bind:value={article.title} placeholder="标题" />
+	<TextBox bind:value={article.book} placeholder="系列" />
+	<TextBox bind:value={article.author} placeholder="作者" />
+	<TextBox bind:value={article.serial} type="number" placeholder="顺序" />
 	<TextBox
 		style="width: 100%;min-height: 30em;margin-top:1em;"
 		bind:value={article.content}
 		textarea
-		label="内容"
+		placeholder="内容"
 	/>
 	<Button on:click={add}>添加文章</Button>
 	<input accept="application/json" type="file" bind:files id="files" />

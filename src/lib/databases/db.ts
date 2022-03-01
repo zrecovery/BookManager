@@ -60,6 +60,16 @@ export class ArticleStore {
 			await this.db.articles.delete(id);
 		});
 	}
+
+	async count(keyword = ''): Promise<number> {
+		return await this.db.transaction('r', this.db.articles, async () => {
+			return await this.db.articles
+				.filter((article) =>
+					ArticleStore.stringIncludeAllKeywords(keyword.split(' '), article.content)
+				)
+				.count();
+		});
+	}
 }
 
 export const articleStore = new ArticleStore(db);

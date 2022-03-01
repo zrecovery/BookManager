@@ -1,6 +1,4 @@
 import { ArticleStore, IdxArticleStore } from '../db';
-import fakeIndexedDb from 'fake-indexeddb';
-import IDBKeyRange from 'fake-indexeddb/lib/FDBKeyRange';
 import { vitest } from 'vitest';
 import Article from '../article';
 

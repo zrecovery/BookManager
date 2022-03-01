@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { liveQuery } from 'dexie';
 	import { articleStore } from '$lib/databases/db';
-	import { TextBox, ListItem, Button } from 'fluent-svelte';
+	import { TextBox, ListItem } from 'fluent-svelte';
+	import Pagination from '$lib/Pagination/Pagination.svelte';
 
 	var searchKey = '';
 	let limit = 25;
@@ -9,13 +10,9 @@
 
 	$: offset = currentPage * limit;
 
-	function nextPage() {
-		currentPage += 1;
-	}
-
-	function prevPage() {
-		currentPage -= 1;
-	}
+	$: bookNumber = liveQuery(async () => {
+		return await articleStore.count();
+	});
 
 	$: articles = liveQuery(async () => {
 		return await articleStore.query(searchKey, offset, limit);
@@ -31,10 +28,7 @@
 		</ListItem>
 	{/each}
 {/if}
-<div style="display: grid; grid-template-columns: repeat(12,1fr);">
-	<Button style="grid-column-start: 10" on:click={prevPage}>Prev</Button>
-	<Button style="grid-column-start: 12" on:click={nextPage}>Next</Button>
-</div>
+<Pagination {limit} rowNumber={$bookNumber} bind:currentPage />
 
 <style>
 	@import url('https://unpkg.com/fluent-svelte/theme.css');
