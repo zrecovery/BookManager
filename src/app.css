@@ -234,15 +234,53 @@
 	}
 }
 
+@media (min-width: 1200px){
+  :root {
+    --body-column: repeat(12, 1fr);
+    --body-row: 4rem auto;
+    --header-column-start: 1;
+    --header-column-end: 13;
+    --header-row-start: 1;
+    --header-row-end: 2;
+    --main-column-start: 3;
+    --main-column-end: 11;
+    --main-row-start: 2;
+    --main-row-end: 3;
+    --aside-column-start: 1;
+    --aside-column-end: 3;
+    --aside-row-start: 1;
+    --aside-row-end: 3;
+  }
+}
+
+@media (max-width: 800px){
+  :root {
+    --body-column: repeat(4, 1fr);
+    --body-row: 4rem auto;
+    --header-column-start: 1;
+    --header-column-end: 5;
+    --header-row-start: 1;
+    --header-row-end: 2;
+    --main-column-start: 1;
+    --main-column-end: 5;
+    --main-row-start: 2;
+    --main-row-end: 3;
+    --aside-column-start: 1;
+    --aside-column-end: 4;
+    --aside-row-start: 2;
+    --aside-row-end: 3;
+  }
+}
+
 #svelte {
 	min-height: 100vh;
 }
 
 header {
-	grid-column-start: 1;
-	grid-column-end: 13;
-	grid-row-start: 1;
-	grid-row-end: 2;
+	grid-column-start: var(--header-column-start);
+	grid-column-end: var(--header-column-end);
+	grid-row-start: var(--header-row-start);
+	grid-row-end: var(--header-row-end);
 	z-index: 10;
 	position: fixed;
 	box-shadow: 0 4px 10px #00000042;
@@ -255,20 +293,20 @@ header {
 main {
 	justify-self: center;
 	width: 100%;
-	grid-column-start: 3;
-	grid-column-end: 11;
-	grid-row-start: 2;
-	grid-row-end: 3;
+	grid-column-start: var(--main-column-start);
+	grid-column-end: var(--main-column-end);
+	grid-row-start: var(--main-row-start);
+	grid-row-end: var(--main-row-end);
 	z-index: 1;
 	overflow-x: scroll;
 	margin-top: 10px;
 }
 
 aside {
-	grid-column-start: 1;
-	grid-column-end: 3;
-	grid-row-start: 1;
-	grid-row-end: 3;
+	grid-column-start: var(--aside-column-start);
+	grid-column-end: var(--aside-column-end);
+	grid-row-start: var(--aside-row-start);
+	grid-row-end: var(--aside-row-end);
 	z-index: 1;
 	background-color: var(--fds-background-color);
 	backdrop-filter: saturate(80%) blur(30px) brightness(120%);
@@ -277,8 +315,8 @@ aside {
 
 .container {
 	display: grid;
-	grid-template-rows: 4rem auto;
-	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: var(--body-row);
+	grid-template-columns: var(--body-column);
   gap: 2rem;
 	min-height: 100vh;
 	margin: 0px;

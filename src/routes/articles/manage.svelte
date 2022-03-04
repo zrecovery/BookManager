@@ -7,7 +7,7 @@
 	$: indeterminate = selectedArticles.length > 0 && selectedArticles.length !== limit;
 	$: groupChecked = selectedArticles.length === limit;
 
-	var searchKey = '';
+	let searchKey = '';
 	let limit = 25;
 	let currentPage = 0;
 
