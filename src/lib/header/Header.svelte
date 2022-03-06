@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { IconButton } from 'fluent-svelte';
+	import { IconButton, TextBox } from 'fluent-svelte';
+  import { page } from '$app/stores';
+
 	function toggle() {
 		let side = document.getElementById('aside');
 		if (side.style.gridColumnEnd === '1') {
@@ -12,6 +14,15 @@
 			side.style.marginLeft = '-200%';
 		}
 	}
+  let searchKey = "";
+
+  function textSearch(){
+    let res = globalThis.find(searchKey, false, false, true, false, true, true);
+  }
+
+  $:searchMode = /\/articles\/(\d+)/.test($page.url.pathname)
+
+  
 </script>
 
 <header id="header">
@@ -28,12 +39,36 @@
 			/></svg
 		>
 	</IconButton>
-	<h3 style="color: var(--fds-text-secondary);grid-column-start: 2;grid-column-end: 4;">
+	<h3 style="color: var(--fds-text-secondary);grid-column-start: var(--header-title-start);grid-column-end: var(--header-title-end);">
 		Book Manager
 	</h3>
+  {#if searchMode}
+  <div style="grid-column-start: var(--header-search-bar-start);grid-column-end:var(--header-search-bar-end);align-self: center;justify-self: center;">
+    <TextBox type="search" searchButton={true} bind:value={searchKey} on:search={textSearch} style="-webkit-user-select: text;"></TextBox>
+  </div>
+  {/if}
 </header>
 
 <style>
+  @media (min-width:1200px){
+    :root {
+      --header-column: repeat(12,1fr);
+      --header-title-start:2;
+      --header-title-end:4;
+      --header-search-bar-start:10;
+      --header-search-bar-end:13;    
+      }
+  }
+
+  @media (max-width: 800px){
+    :root {
+      --header-column: repeat(4,1fr);
+      --header-title-start:2;
+      --header-title-end:3;
+      --header-search-bar-start:3;
+      --header-search-bar-end:5;
+    }
+  }
 	#header {
 		-webkit-backdrop-filter: blur(60px);
 		backdrop-filter: blur(60px);
@@ -48,7 +83,7 @@
 		position: fixed;
 		transform: translateY(0.001px);
 		display: grid;
-		grid-template-columns: repeat(12, 1fr);
+		grid-template-columns: var(--header-column);
 		z-index: 2;
 	}
 </style>
