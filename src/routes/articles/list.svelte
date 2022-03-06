@@ -19,7 +19,7 @@
 	});
 </script>
 
-<TextBox placeholder="关键词" type="text" bind:value={searchKey} />
+<TextBox placeholder="关键词" type="text" bind:value={searchKey} style="-webkit-user-select: text;"/>
 
 {#if $articles}
 	{#each $articles as article}
