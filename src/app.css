@@ -292,7 +292,7 @@ header {
 
 main {
 	justify-self: center;
-	width: 100%;
+	width: 90%;
 	grid-column-start: var(--main-column-start);
 	grid-column-end: var(--main-column-end);
 	grid-row-start: var(--main-row-start);
