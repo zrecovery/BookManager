@@ -30,6 +30,3 @@
 {/if}
 <Pagination {limit} rowNumber={$bookNumber} bind:currentPage />
 
-<style>
-	@import url('https://unpkg.com/fluent-svelte/theme.css');
-</style>

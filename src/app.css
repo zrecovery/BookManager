@@ -302,6 +302,11 @@ main {
 	margin-top: 10px;
 }
 
+article {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 aside {
 	grid-column-start: var(--aside-column-start);
 	grid-column-end: var(--aside-column-end);

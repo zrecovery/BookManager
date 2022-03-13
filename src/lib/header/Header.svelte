@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { IconButton, TextBox } from 'fluent-svelte';
-  import { page } from '$app/stores';
+	import { IconButton } from 'fluent-svelte';
 
 	function toggle() {
 		let side = document.getElementById('aside');
@@ -14,15 +13,6 @@
 			side.style.marginLeft = '-200%';
 		}
 	}
-  let searchKey = "";
-
-  function textSearch(){
-    let res = globalThis.find(searchKey, false, false, true, false, true, true);
-  }
-
-  $:searchMode = /\/articles\/(\d+)/.test($page.url.pathname)
-
-  
 </script>
 
 <header id="header">
@@ -42,11 +32,6 @@
 	<h3 style="color: var(--fds-text-secondary);grid-column-start: var(--header-title-start);grid-column-end: var(--header-title-end);">
 		Book Manager
 	</h3>
-  {#if searchMode}
-  <div style="grid-column-start: var(--header-search-bar-start);grid-column-end:var(--header-search-bar-end);align-self: center;justify-self: center;">
-    <TextBox type="search" searchButton={true} bind:value={searchKey} on:search={textSearch} style="-webkit-user-select: text;"></TextBox>
-  </div>
-  {/if}
 </header>
 
 <style>
