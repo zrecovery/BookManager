@@ -11,7 +11,7 @@
 	$: offset = currentPage * limit;
 
 	$: bookNumber = liveQuery(async () => {
-		return await articleStore.count();
+		return await articleStore.count(searchKey);
 	});
 
 	$: articles = liveQuery(async () => {
@@ -19,7 +19,12 @@
 	});
 </script>
 
-<TextBox placeholder="关键词" type="text" bind:value={searchKey} style="-webkit-user-select: text;"/>
+<TextBox
+	placeholder="关键词"
+	type="text"
+	bind:value={searchKey}
+	style="-webkit-user-select: text;"
+/>
 
 {#if $articles}
 	{#each $articles as article}
@@ -29,4 +34,3 @@
 	{/each}
 {/if}
 <Pagination {limit} rowNumber={$bookNumber} bind:currentPage />
-

@@ -29,31 +29,33 @@
 			/></svg
 		>
 	</IconButton>
-	<h3 style="color: var(--fds-text-secondary);grid-column-start: var(--header-title-start);grid-column-end: var(--header-title-end);">
+	<h3
+		style="color: var(--fds-text-secondary);grid-column-start: var(--header-title-start);grid-column-end: var(--header-title-end);"
+	>
 		Book Manager
 	</h3>
 </header>
 
 <style>
-  @media (min-width:1200px){
-    :root {
-      --header-column: repeat(12,1fr);
-      --header-title-start:2;
-      --header-title-end:4;
-      --header-search-bar-start:10;
-      --header-search-bar-end:13;    
-      }
-  }
+	@media (min-width: 1200px) {
+		:root {
+			--header-column: repeat(12, 1fr);
+			--header-title-start: 2;
+			--header-title-end: 4;
+			--header-search-bar-start: 10;
+			--header-search-bar-end: 13;
+		}
+	}
 
-  @media (max-width: 800px){
-    :root {
-      --header-column: repeat(4,1fr);
-      --header-title-start:2;
-      --header-title-end:3;
-      --header-search-bar-start:3;
-      --header-search-bar-end:5;
-    }
-  }
+	@media (max-width: 800px) {
+		:root {
+			--header-column: repeat(4, 1fr);
+			--header-title-start: 2;
+			--header-title-end: 3;
+			--header-search-bar-start: 3;
+			--header-search-bar-end: 5;
+		}
+	}
 	#header {
 		-webkit-backdrop-filter: blur(60px);
 		backdrop-filter: blur(60px);

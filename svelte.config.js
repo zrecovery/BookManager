@@ -9,10 +9,10 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-       pages: 'build',
-       assets: 'build',
-       fallback: null
-    }),
+			pages: 'build',
+			assets: 'build',
+			fallback: null
+		}),
 
 		// Override http methods in the Todo forms
 		methodOverride: {

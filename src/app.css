@@ -234,42 +234,42 @@
 	}
 }
 
-@media (min-width: 1200px){
-  :root {
-    --body-column: repeat(12, 1fr);
-    --body-row: 4rem auto;
-    --header-column-start: 1;
-    --header-column-end: 13;
-    --header-row-start: 1;
-    --header-row-end: 2;
-    --main-column-start: 3;
-    --main-column-end: 11;
-    --main-row-start: 2;
-    --main-row-end: 3;
-    --aside-column-start: 1;
-    --aside-column-end: 3;
-    --aside-row-start: 1;
-    --aside-row-end: 3;
-  }
+@media (min-width: 1200px) {
+	:root {
+		--body-column: repeat(12, 1fr);
+		--body-row: 4rem auto;
+		--header-column-start: 1;
+		--header-column-end: 13;
+		--header-row-start: 1;
+		--header-row-end: 2;
+		--main-column-start: 3;
+		--main-column-end: 11;
+		--main-row-start: 2;
+		--main-row-end: 3;
+		--aside-column-start: 1;
+		--aside-column-end: 3;
+		--aside-row-start: 1;
+		--aside-row-end: 3;
+	}
 }
 
-@media (max-width: 800px){
-  :root {
-    --body-column: repeat(4, 1fr);
-    --body-row: 4rem auto;
-    --header-column-start: 1;
-    --header-column-end: 5;
-    --header-row-start: 1;
-    --header-row-end: 2;
-    --main-column-start: 1;
-    --main-column-end: 5;
-    --main-row-start: 2;
-    --main-row-end: 3;
-    --aside-column-start: 1;
-    --aside-column-end: 4;
-    --aside-row-start: 2;
-    --aside-row-end: 3;
-  }
+@media (max-width: 800px) {
+	:root {
+		--body-column: repeat(4, 1fr);
+		--body-row: 4rem auto;
+		--header-column-start: 1;
+		--header-column-end: 5;
+		--header-row-start: 1;
+		--header-row-end: 2;
+		--main-column-start: 1;
+		--main-column-end: 5;
+		--main-row-start: 2;
+		--main-row-end: 3;
+		--aside-column-start: 1;
+		--aside-column-end: 4;
+		--aside-row-start: 2;
+		--aside-row-end: 3;
+	}
 }
 
 #svelte {
@@ -303,8 +303,8 @@ main {
 }
 
 article {
-  margin-left: 2rem;
-  margin-right: 2rem;
+	margin-left: 2rem;
+	margin-right: 2rem;
 }
 
 aside {
@@ -322,11 +322,10 @@ aside {
 	display: grid;
 	grid-template-rows: var(--body-row);
 	grid-template-columns: var(--body-column);
-  gap: 2rem;
+	gap: 2rem;
 	min-height: 100vh;
 	margin: 0px;
 	background-color: var(--fds-background-color);
 	color: var(--fds-text-primary);
 	font-family: var(--fds-font-family-text);
 }
-

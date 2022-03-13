@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Aside from '$lib/aside/Aside.svelte';
 	import Header from '$lib/header/Header.svelte';
-  import {setContext} from 'svelte';
+	import { setContext } from 'svelte';
 
-  setContext('searchService',{
-    keyword:""
-  });
+	setContext('searchService', {
+		keyword: ''
+	});
 </script>
 
 <Header />

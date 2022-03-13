@@ -31,12 +31,6 @@
 	}
 </script>
 
-<style>
-  form {
-    margin-bottom: 2rem;
-  }
-</style>
-
 <form style="display: grid;grid-template-rows:auto;gap:1em;">
 	<legend>添加文字</legend>
 	<TextBox bind:value={article.title} placeholder="标题" />
@@ -53,3 +47,8 @@
 	<input accept="application/json" type="file" bind:files id="files" />
 </form>
 
+<style>
+	form {
+		margin-bottom: 2rem;
+	}
+</style>

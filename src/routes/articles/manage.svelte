@@ -62,19 +62,27 @@
 	}
 </script>
 
-<TextBox placeholder="关键词" searchButton={true} bind:value={searchKey} style="-webkit-user-select: text;"></TextBox>
+<TextBox
+	placeholder="关键词"
+	searchButton={true}
+	bind:value={searchKey}
+	style="-webkit-user-select: text;"
+/>
 {#if $articles}
 	<fluent-data-grid generate-header="none" style="overflow-y: auto; ">
 		<fluent-data-grid-row
 			row-type="header"
 			id="defaultHeader"
-			grid-template-columns="repeat(5,1fr)">
+			grid-template-columns="repeat(5,1fr)"
+		>
 			<fluent-data-grid-cell cell-type="columnheader" grid-column="1">
 				<input
 					type="checkbox"
 					checked={groupChecked}
 					{indeterminate}
-					on:click={selectedAll} /></fluent-data-grid-cell>
+					on:click={selectedAll}
+				/></fluent-data-grid-cell
+			>
 			<fluent-data-grid-cell cell-type="columnheader" grid-column="2">标题</fluent-data-grid-cell>
 			<fluent-data-grid-cell cell-type="columnheader" grid-column="3">系列</fluent-data-grid-cell>
 			<fluent-data-grid-cell cell-type="columnheader" grid-column="4">作者</fluent-data-grid-cell>
@@ -84,13 +92,15 @@
 		{#each $articles as article}
 			<fluent-data-grid-row grid-template-columns="repeat(5,1fr)">
 				<fluent-data-grid-cell grid-column="1">
-        <input
+					<input
 						type="checkbox"
 						bind:group={selectedArticles}
-						value={article} /></fluent-data-grid-cell>
+						value={article}
+					/></fluent-data-grid-cell
+				>
 				<fluent-data-grid-cell grid-column="2">
-          <fluent-anchor href="/articles/{article.id}">{article.title}</fluent-anchor>
-        </fluent-data-grid-cell>
+					<fluent-anchor href="/articles/{article.id}">{article.title}</fluent-anchor>
+				</fluent-data-grid-cell>
 				<fluent-data-grid-cell grid-column="3">{article.book}</fluent-data-grid-cell>
 				<fluent-data-grid-cell grid-column="4">{article.author}</fluent-data-grid-cell>
 				<fluent-data-grid-cell grid-column="5">{article.serial}</fluent-data-grid-cell>
