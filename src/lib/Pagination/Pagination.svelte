@@ -17,8 +17,27 @@
 	$: bookTotalPage = Math.ceil(rowNumber / limit);
 </script>
 
-<div
-	style="display: grid; grid-template-columns: repeat(12,1fr);align-content: center;justify-content: center;"
+<style>
+  @media (min-width: 1200px){
+    :root {
+       --pagination-grid-columns: repeat(12,1fr)
+    }
+  }
+
+  @media (max-width: 800px) {
+    :root{
+      --pagination-grid-columns: repeat(4,1fr)
+    }
+  }
+
+  #pagination {
+    display: grid;
+    grid-auto-columns: var(--pagination-grid-columns);
+  }
+</style>
+
+<div id="pagination"
+	style="display: grid; align-content: center;justify-content: center;"
 >
 	<Button style="grid-column-start: 9;" on:click={prevPage}>上一页</Button>
 	<p style="grid-column-start: 10;">{currentPage}/{bookTotalPage}</p>
