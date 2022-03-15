@@ -238,6 +238,7 @@
 	:root {
 		--body-column: repeat(12, 1fr);
 		--body-row: 4rem auto;
+    --body-gap: 2rem;
 		--header-column-start: 1;
 		--header-column-end: 13;
 		--header-row-start: 1;
@@ -257,6 +258,7 @@
 	:root {
 		--body-column: repeat(4, 1fr);
 		--body-row: 4rem auto;
+    --body-gap: 1rem;
 		--header-column-start: 1;
 		--header-column-end: 5;
 		--header-row-start: 1;
@@ -266,10 +268,15 @@
 		--main-row-start: 2;
 		--main-row-end: 3;
 		--aside-column-start: 1;
-		--aside-column-end: 4;
+		--aside-column-end: 1;
 		--aside-row-start: 2;
 		--aside-row-end: 3;
 	}
+
+  aside {
+    width: 0;
+    margin-left: -200%;
+  }
 }
 
 #svelte {
@@ -322,7 +329,7 @@ aside {
 	display: grid;
 	grid-template-rows: var(--body-row);
 	grid-template-columns: var(--body-column);
-	gap: 2rem;
+	gap: var(--body-gap);
 	min-height: 100vh;
 	margin: 0px;
 	background-color: var(--fds-background-color);

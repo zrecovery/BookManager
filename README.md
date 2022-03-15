@@ -12,7 +12,7 @@
 
 ## 主要开发中
 
-- [✖️]PWA + Service Worker + Offline
+- [✖️]页面内关键词搜索及跳转
 
 - [✖️]测试
 
@@ -29,13 +29,13 @@ $ npm install
 ### 开发
 
 ```sh
-$ npm run dev
+$ pnpm run dev
 ```
 
 ### 构建
 
 ```sh
-$ npm run build
+$ pnpm run build
 ```
 
 ## 使用许可

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { IconButton } from 'fluent-svelte';
+	import { IconButton, Button, TextBox } from 'fluent-svelte';
 
 	function toggle() {
 		let side = document.getElementById('aside');
 		if (side.style.gridColumnEnd === '1') {
-			side.style.gridColumnEnd = '3';
+			side.style.gridColumnEnd = '4';
 			side.style.width = '100%';
 			side.style.marginLeft = '0%';
 		} else {
@@ -13,6 +13,11 @@
 			side.style.marginLeft = '-200%';
 		}
 	}
+  let searchKey = '';
+  
+	function textSearch() {
+		let res = globalThis.find(searchKey, false, false, true, false, true, true);
+ 	}
 </script>
 
 <header id="header">
@@ -34,6 +39,12 @@
 	>
 		Book Manager
 	</h3>
+  <div style="justify-content:center; align-self: center; grid-column-start: var(--search-text-start); grid-column-end: var(--search-text-end);">
+    <TextBox bind:value={searchKey} style="-webkit-user-select: text;" />
+  </div>
+  <div style="justify-content:center; align-self: center;grid-column-start:var(--search-button-start)">
+    <Button on:click={textSearch} >搜索</Button>
+  </div>
 </header>
 
 <style>
@@ -41,9 +52,11 @@
 		:root {
 			--header-column: repeat(12, 1fr);
 			--header-title-start: 2;
+      --header-gap: 2rem;
 			--header-title-end: 4;
-			--header-search-bar-start: 10;
-			--header-search-bar-end: 13;
+			--search-text-start: 10;
+			--search-text-end: 12;
+      --search-button-start:12;
 		}
 	}
 
@@ -51,9 +64,11 @@
 		:root {
 			--header-column: repeat(4, 1fr);
 			--header-title-start: 2;
+      --header-gap: 1rem;
 			--header-title-end: 3;
-			--header-search-bar-start: 3;
-			--header-search-bar-end: 5;
+			--search-text-start: 3;
+			--search-text-end: 4;
+      --search-button-start:4;
 		}
 	}
 	#header {
@@ -70,6 +85,7 @@
 		position: fixed;
 		transform: translateY(0.001px);
 		display: grid;
+    gap: var(--header-gap);
 		grid-template-columns: var(--header-column);
 		z-index: 2;
 	}

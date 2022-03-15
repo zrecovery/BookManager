@@ -8,7 +8,7 @@
 	$: groupChecked = selectedArticles.length === limit;
 
 	let searchKey = '';
-	let limit = 25;
+	let limit = 15;
 	let currentPage = 0;
 
 	let selectedArticles: Article[] = [];
@@ -32,7 +32,7 @@
 		selectedArticles = [];
 	}
 
-	function download(filename, text) {
+	function download(filename: string, text:string) {
 		var element = document.createElement('a');
 		var blob = new Blob([text], { type: 'text/plain' });
 		var url = window.URL.createObjectURL(blob);

@@ -5,7 +5,7 @@
 	import Pagination from '$lib/Pagination/Pagination.svelte';
 
 	var searchKey = '';
-	let limit = 25;
+	let limit = 15;
 	let currentPage = 0;
 
 	$: offset = currentPage * limit;
